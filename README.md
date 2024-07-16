@@ -6,3 +6,5 @@
 |--------|--------|-------|
 |11-07-2024|Dr.Arvind Dhingra,Dr.Parminder Singh and Dr l. HS Rai|They introduced us to the college, societies and Clubs.They also referred us some courses like "Power Searching with Google course"," Sky Hacks java course" and " Excel course"|
 |------|------|-------|
+|12-07-2024|Dr.Jasmine Kaur|Taught us about UHV after that peer interaction classes happened in which they taught us about Excel worksheet.|
+|-------|------|------|
