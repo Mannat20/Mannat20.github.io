@@ -11,3 +11,9 @@
 |15-07-2024|Dr.Randhir Singh,Dr.Pyare Lal,Mr.Sony Goyal and Mr.pancham|They started  delivering an interesting speech about how we should improve our inner self in these next 4 years.Then they told us about the mantra that is LIFE (Learn,Inquire,Future,Explore).|
 |------|------|-----|
 |16-07-2024|Dr.HS Rai| Starting with IT Department visit followed by explanation of how to make web pages and github account.|
+|17-07-2024|Prof.Rishi Kapoor|  |
+|18-07-2024|Pf Harpal Singh Pannu,Pf Rishi Kapoor,Dr.Harwinder Singh and Er.Jasvir Singh||
+|19-07-2024|Er.Kanwardeep Jalra, Jaswinder Singh Incharge -IAPT and Pf.Sania||
+|22-07-2024|Dr.Sangeeta ||
+
+
