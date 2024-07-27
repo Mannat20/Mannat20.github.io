@@ -1,5 +1,25 @@
 # Activity Report of Student Induction Programme 
 ## My Portfolio
+>Hi everyone :wave:,My name is **Mannat Kaur** and i am currently pursuing B.Teach in Information Technology branch in **_"Guru Nanak Dev Engineering College, Ludhiana_"** .I have completed my schooling from *"Spring Dale Public School, Ludhiana"*.I am always eager to expand my knowledge.My aim is to become an *Skillful Software Engineer* who wishes to contribute in developing new facility.I have represented my school in various sports like _Handball,disc throw and shot put_.Currently I am pursuing a *Java course* from*Apni kaksha*.
+-I do have experience in:-
+#### Python
+ *Data Handling using
+   *Data Structure,Numeric functions, Aggregate Functions.
+   * Exporting-Importing CSV Files
+   * Data plotting using Matplotlib
+#### MYSQL
+ *DBMS,RDBMS
+ *Functions 
+ *Operation in Relations
+ *Data Definition Language 
+ *Data Manipulation Language 
+
+### My Academic Scores
+CLASS|YEAR|PERCENTAGE 
+----|----|----
+|10|2022|94.2%|
+|12|2024|89.8%|
+### BEGINNING OF NEW PHASE IN THE JOURNEY OF LIFE FROM GNDEC
 |Date|Resource Person|Activity Done|
 |--------|--------|--------|
 | 09-07-2024| IAS Harleen Kaur and college faculty members|Firstly Shabad kirtan was done in Gurudwara Sahib followed by the welcoming speech of IAS Harleen ma'am along with college faculty members in the auditorium and told us how we can be consistent in our next 4 years.|
