@@ -30,7 +30,7 @@ CLASS|YEAR|PERCENTAGE
 |10|2022|94.2%|
 |12|2024|89.8%|
 ## BEGINNING OF NEW PHASE IN THE JOURNEY OF LIFE FROM GNDEC
-![GNDEC Front](![gne_front](https://github.com/user-attachments/assets/f702350c-47b1-4e44-8751-7ec1862df583))
+![gne_front](https://github.com/user-attachments/assets/f702350c-47b1-4e44-8751-7ec1862df583)
 
 ### Activity Report of Student Induction Programme
 _Here I keep a record of what I have done in the College each day._
