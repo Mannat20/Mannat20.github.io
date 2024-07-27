@@ -2,9 +2,8 @@
 >Hi everyone :wave:,My name is **Mannat Kaur** and i am currently pursuing B.Teach in Information Technology branch in **_"Guru Nanak Dev Engineering College, Ludhiana_"** .I have completed my schooling from *"Spring Dale Public School, Ludhiana"*.I am always eager to expand my knowledge.My aim is to become an *Skillful Software Engineer* who wishes to contribute in developing new facility.I have represented my school in various sports like _Handball,disc throw and shot put_.Currently I am pursuing a *Java course* from *Apni kaksha*.
 
 ### * I do have experience in:-
- **Python**
-  * Data Handling using
- 
+**Python**
+ * Data Handling using
    * Data Structure,Numeric functions, Aggregate Functions.
    * Exporting-Importing CSV Files
    * Data plotting using Matplotlib
@@ -54,4 +53,4 @@ _Here I keep a record of what I have done in the College each day._
 |25-07-2024|Dr.Sandeep Kaur and Prof.Sukhminder Singh|We had our two lectures alternatively on mathematics which were conducted by Dr.Sandeep Kaur and Prof.Sukhminder Singh.After the break we had our maths test on the topics of Differentiation,Integration and Differential Equation.|
 |26-07-2024|Meditation Counsellor and Homepathic Practitioner Dr.Kanwalpreet Kaur|The day was started with the speech on meditation followed by a video through which Dr.Kanwalpreet explained the benefits and importance of meditation and after that she told us to meditate for 15 minutes.Afterwards different performances were performed by our senior and our batchmates.we all really enjoyed the event.|
 ### FEEDBACK ON INDUCTION PROGRAMME
-Firstly i would like to thanks all the people who have planned and managed this event from day 1. Every day seems enjoyable and learnable as every time new speakers would come and fulfilled us with the knowledge and experiences they have.From this Induction Programme we learnt new things each day.The events of Dancing,Singing and Mimicry were realy entertaining.I really appreciate the hardwork of the team that made this event so good.I wish all the future events will be as great as this.
+Firstly i would like to thanks all the people who have planned and managed this event from day 1. Every day seems enjoyable and learnable as every time new speakers would come and fulfilled us with the knowledge and experiences they have.From this Induction Programme we learnt new things each day.The events of Dancing,Singing and Mimicry were realy entertaining.I really appreciate the hardwork of the team that made this event so good. I wish all the future events will be as great as this.
