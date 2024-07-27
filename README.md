@@ -9,15 +9,17 @@
    * Data Structure,Numeric functions, Aggregate Functions.
    * Exporting-Importing CSV Files
    * Data plotting using Matplotlib
+     
 **MYSQL**
   * DBMS,RDBMS
   * Functions 
   * Operation in Relations
   * Data Definition Language 
   * Data Manipulation Language
+  
 **EXCEL**
-I have completed basics of Excel,Data Visualisation from Great Learning
-![Excel Certificate](Excel certificate.jpeg)
+I have completed basics of Excel,Data Visualisation from Great Learning.
+![Excel certificate](https://github.com/user-attachments/assets/adb7874d-801f-4bb5-8159-4550580cafb6))
     
 
 ### My Academic Scores
