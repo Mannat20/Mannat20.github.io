@@ -1,5 +1,5 @@
 # My Portfolio
->Hi everyone :wave:,My name is **Mannat Kaur** and i am currently pursuing B.Teach in Information Technology branch in **_"Guru Nanak Dev Engineering College, Ludhiana_"** .I have completed my schooling from *"Spring Dale Public School, Ludhiana"*.I am always eager to expand my knowledge.My aim is to become an *Skillful Software Engineer* who wishes to contribute in developing new facility.I have represented my school in various sports like _Handball,disc throw and shot put_.Currently I am pursuing a *Java course* from *Apni kaksha*.
+>Hi everyone :wave:,My name is **Mannat Kaur** and i am currently pursuing B.Teach in Information Technology branch in **_"Guru Nanak Dev Engineering College, Ludhiana_"** .I have completed my schooling from *"Spring Dale Public School, Ludhiana"*.I am always eager to expand my knowledge.My aim is to become an *Skillful Software Engineer* who wishes to contribute in developing new facility.I have represented my school in various sports like _Handball,disc throw and shot put_.Currently I am pursuing a *Java course* from *Apni College*.
 
 ### * I do have experience in:-
 **Python**
