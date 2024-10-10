@@ -1,0 +1,268 @@
+import cv2
+import numpy as np
+from flask import Flask, request, jsonify
+
+app = Flask(__name__)
+
+# Function to enhance the image
+def enhance_image(image_path):
+    """
+    Enhances the given image using a combination of techniques.
+
+    Args:
+        image_path (str): Path to the image file.
+
+    Returns:
+        numpy.ndarray: The enhanced image as a NumPy array.
+    """
+
+    # Read the image from the given path
+    image = cv2.imread(image_path)
+
+    # Convert to YUV color space for better illumination handling
+    yuv_image = cv2.cvtColor(image, cv2.COLOR_BGR2YUV)
+
+    # Apply histogram equalization to the Y channel for contrast enhancement
+    yuv_image[:, :, 0] = cv2.equalizeHist(yuv_image[:, :, 0])
+
+    # Convert back to BGR color space
+    enhanced_image = cv2.cvtColor(yuv_image, cv2.COLOR_YUV2BGR)
+
+    # Apply bilateral filtering for noise reduction while preserving edges
+    enhanced_image = cv2.bilateralFilter(enhanced_image, 9, 75, 75)
+
+    return enhanced_image
+
+@app.route('/enhance', methods=['POST'])
+def process_image():
+    """
+    Endpoint to receive an image, enhance it, and return the result.
+
+    Expects a POST request with an image file in the 'image' field.
+
+    Returns:
+        JSON response with the enhanced image encoded as base64 string.
+    """
+
+    if 'image' not in request.files:
+        return jsonify({'error': 'No image provided'}), 400
+
+    image_file = request.files['image']
+
+    # Save the uploaded image temporarily
+    image_path = 'temp_image.jpg' 
+    image_file.save(image_path)
+
+    # Enhance the image
+    enhanced_image = enhance_image(image_path)
+
+    # Encode the image to base64 for transmission
+    _, buffer = cv2.imencode('.jpg', enhanced_image)
+    image_base64 = base64.b64encode(buffer).decode('utf-8')
+
+    return jsonify({'enhanced_image': image_base64})
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+IMAGE ENHANCEMENT USING PILLOW
+
+from PIL import Image, ImageEnhance
+import cv2
+import numpy as np
+from flask import Flask, request, jsonify
+import base64
+import os
+
+app = Flask(__name__)
+
+# Define the path to your image dataset
+DATASET_PATH = "path/to/your/image/dataset"  # Replace with your actual path
+
+# Function to enhance the image
+def enhance_image(image_path, contrast=1.5, sharpness=1.2, color=1.2):
+    """
+    Enhances the given image using Pillow library.
+
+    Args:
+        image_path (str): Path to the image file.
+        contrast (float, optional): Contrast enhancement factor (default: 1.5).
+        sharpness (float, optional): Sharpness enhancement factor (default: 1.2).
+        color (float, optional): Color saturation enhancement factor (default: 1.2).
+
+    Returns:
+        PIL.Image: The enhanced image.
+    """
+
+    # Open the image
+    image = Image.open(image_path)
+
+    # Enhance contrast
+    enhancer = ImageEnhance.Contrast(image)
+    image = enhancer.enhance(contrast)
+
+    # Enhance sharpness
+    enhancer = ImageEnhance.Sharpness(image)
+    image = enhancer.enhance(sharpness)
+
+    # Enhance color saturation
+    enhancer = ImageEnhance.Color(image)
+    image = enhancer.enhance(color)
+
+    # Color Correction (using OpenCV)
+    image_np = np.array(image)  # Convert PIL Image to NumPy array
+    image_np = cv2.cvtColor(image_np, cv2.COLOR_RGB2BGR)  # Convert to BGR for OpenCV
+    # Apply color correction techniques here (e.g., white balance, color balance)
+    # ...
+    image = Image.fromarray(cv2.cvtColor(image_np, cv2.COLOR_BGR2RGB))  # Convert back to PIL Image
+
+    return image
+
+@app.route('/enhance', methods=['POST'])
+def process_image():
+    """
+    Endpoint to receive an image path, enhance it, and return the result.
+
+    Expects a POST request with an image path in the 'image_path' field.
+
+    Returns:
+        JSON response with the enhanced image encoded as base64 string.
+    """
+
+    if 'image_path' not in request.form:
+        return jsonify({'error': 'No image path provided'}), 400
+
+    image_path = request.form['image_path']
+
+    # Validate the image path (ensure it's within your dataset)
+    if not image_path.startswith(DATASET_PATH):
+        return jsonify({'error': 'Invalid image path'}), 400
+
+    # Enhance the image
+    enhanced_image = enhance_image(image_path)
+
+    # Encode the image to base64 for transmission
+    _, buffer = cv2.imencode('.jpg', np.array(enhanced_image))  # Convert PIL Image to NumPy array
+    image_base64 = base64.b64encode(buffer).decode('utf-8')
+
+    return jsonify({'enhanced_image': image_base64})
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
+
+________________________________________________________________________________________________________________________________________________
+IMAGE ENHANCEMENT USING OPENCV
+
+import cv2
+import numpy as np
+from flask import Flask, request, jsonify
+import base64
+import os
+
+app = Flask(__name__)
+
+# Define the path to your image dataset
+DATASET_PATH = "path/to/your/image/dataset"  # Replace with your actual path
+
+# Function to enhance the image
+def enhance_image(image_path):
+    """
+    Enhances the given image using OpenCV.
+
+    Args:
+        image_path (str): Path to the image file.
+
+    Returns:
+        numpy.ndarray: The enhanced image as a NumPy array.
+    """
+
+    # Read the image
+    image = cv2.imread(image_path)
+
+    # Color Correction
+    # 1. White Balance (using Grayworld algorithm)
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    average = np.average(gray)
+    # Calculate scaling factors for each channel
+    b_scale = average / np.average(image[:, :, 0])
+    g_scale = average / np.average(image[:, :, 1])
+    r_scale = average / np.average(image[:, :, 2])
+    # Apply scaling to each channel
+    image[:, :, 0] = image[:, :, 0] * b_scale
+    image[:, :, 1] = image[:, :, 1] * g_scale
+    image[:, :, 2] = image[:, :, 2] * r_scale
+
+    # 2. Color Balance (adjusting individual color channels)
+    # You can add color balance techniques here if needed.
+    # For example, using cv2.LUT with a custom lookup table.
+
+    # Contrast Enhancement
+    # 1. Histogram Equalization (for grayscale or Y channel of YUV)
+    gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    equalized_image = cv2.equalizeHist(gray_image)
+    image = cv2.cvtColor(equalized_image, cv2.COLOR_GRAY2BGR)  # Convert back to BGR
+
+    # 2. Adaptive Histogram Equalization (for better local contrast)
+    clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
+    lab_image = cv2.cvtColor(image, cv2.COLOR_BGR2LAB)
+    lab_image[:, :, 0] = clahe.apply(lab_image[:, :, 0])
+    image = cv2.cvtColor(lab_image, cv2.COLOR_LAB2BGR)
+
+    # Sharpening
+    # 1. Unsharp Masking
+    blurred_image = cv2.GaussianBlur(image, (5, 5), 0)
+    sharpened_image = cv2.addWeighted(image, 1.5, blurred_image, -0.5, 0)
+    image = sharpened_image
+
+    # 2. Kernel-based Sharpening
+    # You can define a sharpening kernel and apply it using cv2.filter2D.
+
+    # Noise Reduction (Optional)
+    # You can add noise reduction techniques here if needed.
+    # For example, using cv2.GaussianBlur or cv2.medianBlur.
+
+    return image
+
+@app.route('/enhance', methods=['POST'])
+def process_image():
+    """
+    Endpoint to receive an image path, enhance it, and return the result.
+
+    Expects a POST request with an image path in the 'image_path' field.
+
+    Returns:
+        JSON response with the enhanced image encoded as base64 string.
+    """
+
+    if 'image_path' not in request.form:
+        return jsonify({'error': 'No image path provided'}), 400
+
+    image_path = request.form['image_path']
+
+    # Validate the image path (ensure it's within your dataset)
+    if not image_path.startswith(DATASET_PATH):
+        return jsonify({'error': 'Invalid image path'}), 400
+
+    # Enhance the image
+    enhanced_image = enhance_image(image_path)
+
+    # Encode the image to base64 for transmission
+    _, buffer = cv2.imencode('.jpg', enhanced_image)
+    image_base64 = base64.b64encode(buffer).decode('utf-8')
+
+    return jsonify({'enhanced_image': image_base64})
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
+
+
+
